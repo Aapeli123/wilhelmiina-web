@@ -1,0 +1,19 @@
+@import "../Colors.scss";
+.login {
+    text-align: center;
+    h1 {
+        font-size: 40px;
+    }
+}
+.login-container {
+    input {
+        margin: .1rem;
+        border: 0;
+        height: 2em;
+    }
+    width: fit-content;
+    margin: auto;
+}
+.login-header {
+    color: $white;
+}
