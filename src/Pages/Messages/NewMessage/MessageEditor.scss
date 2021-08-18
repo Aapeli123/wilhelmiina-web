@@ -1,0 +1,37 @@
+@import "../../Colors.scss";
+.MessageContent {
+    resize: none;
+    width: 600px;
+    height: 500px;
+    font-size: 20px;
+}
+
+.title {
+    font-size: 30px;
+    width: 600px;
+}
+
+.col {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.right {
+    height: 500px;
+    margin: 0;
+}
+.mdeditor {
+    background-color: #313131;
+    overflow: scroll;
+    height: 450px;
+}
+
+.msgsend {
+    font-size: 30px;
+}

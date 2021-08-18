@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import { api } from "../../App";
+import { api, GetUserCtx, UserCtx } from "../../App";
 
 import "./Navbar.scss";
 
 const Navbar = (props) => {
     const [userdata, setUserdata] = useState(null);
-    const getUserdata = async () => {
+/*     const getUserdata = async () => {
         try {
             let res = await api.get("user/");
             if(!res.data.success) {
@@ -19,11 +19,9 @@ const Navbar = (props) => {
         } catch(err) {
             toast.error(err);
         }
-    }
+    } */
 
-    useEffect(() => {
-        getUserdata();
-    }, []);
+    const data = useContext(UserCtx);
     return (
         <>
         <nav className="navbar-container">
@@ -53,7 +51,7 @@ const Navbar = (props) => {
                     Options
                 </Link>
                 </li>
-                {userdata?.Role > 2 && (
+                {data?.data?.Role > 2 && (
                     <>
                     <li>
                     <Link to="/admin" >
@@ -69,7 +67,6 @@ const Navbar = (props) => {
                 </li>
             </ul>
         </nav>
-        <ToastContainer autoClose={false} />
         </>
     )
 }
