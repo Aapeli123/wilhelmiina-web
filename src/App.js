@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { toast, ToastContainer } from "react-toastify";
 import ErrorPage from "./Pages/Error/Error";
+import AdminPanel from "./Pages/Admin/Admin";
 
 const apiurl = "http://localhost:8080/api" 
 export const api = axios.create({
@@ -59,7 +60,9 @@ function App() {
       <Route path="/messages/new" component={WriteMessage} />
       <Route path="/messages" component={Messages} />
 
-      <Route path="/error" component={ErrorPage}></Route>
+      <Route path="/error" component={ErrorPage} />
+      
+      <Route path="/admin" component={AdminPanel} />
 
       <Route path="/" component={Home} />
 
